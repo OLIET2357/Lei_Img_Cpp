@@ -12,7 +12,7 @@ cv::Mat lei_img(const char*);
 
 int main(int argc, char* argv[]) {
 	if (argc <= 1) {
-		std::cout << argv[0] << " " << "[FILE]" << std::endl;
+		std::cout << argv[0] << " [FILE] (NOSHOW)" << std::endl;
 		return 1;
 	}
 
@@ -22,9 +22,10 @@ int main(int argc, char* argv[]) {
 
 	cv::imwrite(std::string(infile) + ".jpg", img);
 
-	cv::imshow("", img);
-
-	cv::waitKey(0);
+	if (argc <= 2) {
+		cv::imshow("", img);
+		cv::waitKey(0);
+	}
 
 	return 0;
 }
