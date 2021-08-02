@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <opencv2/opencv.hpp>
 
 #ifdef _DEBUG
@@ -18,6 +19,8 @@ int main(int argc, char* argv[]) {
 	const char* infile = argv[1];
 
 	const cv::Mat img = lei_img(infile);
+
+	cv::imwrite(std::string(infile) + ".jpg", img);
 
 	cv::imshow("", img);
 
