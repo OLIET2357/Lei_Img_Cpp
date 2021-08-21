@@ -20,8 +20,10 @@ int main(int argc, char* argv[]) {
 
 	const cv::Mat img = lei_img(infile);
 
-	cv::imwrite(std::string(infile) + ".jpg", img);
-	std::cout << "Image Written" << std::endl;
+	std::string outfile = std::string(infile) + ".jpg";
+
+	cv::imwrite(outfile, img);
+	std::cout << "Image Written to " << outfile << std::endl;
 
 	if (argc <= 2) {
 		cv::imshow("", img);
