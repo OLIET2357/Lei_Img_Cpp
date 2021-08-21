@@ -3,7 +3,7 @@
 #include <vector>
 #include <opencv2/opencv.hpp>
 
-cv::Mat lei_img(const char* FILE) {
+cv::Mat lei_img(std::string FILE) {
 	std::ifstream ifs;
 
 	ifs.open(FILE, std::ios::in | std::ios::binary);

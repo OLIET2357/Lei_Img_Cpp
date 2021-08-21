@@ -8,7 +8,7 @@
 #pragma comment(lib,"opencv_world453.lib")
 #endif
 
-cv::Mat lei_img(const char*);
+cv::Mat lei_img(std::string);
 
 int main(int argc, char* argv[]) {
 	if (argc <= 1) {
@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	const char* infile = argv[1];
+	std::string infile = argv[1];
 
 	const cv::Mat img = lei_img(infile);
 
