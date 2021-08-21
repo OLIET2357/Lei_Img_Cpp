@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
 	std::cout << "Image Written to " << outfile << std::endl;
 
 	if (argc <= 2) {
-		cv::imshow("", img);
+		cv::imshow(infile, img);
 		cv::waitKey(0);
 	}
 
