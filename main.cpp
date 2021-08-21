@@ -11,24 +11,24 @@
 cv::Mat lei_img(std::string);
 
 int main(int argc, char* argv[]) {
-	if (argc <= 1) {
-		std::cout << argv[0] << " [FILE] (NOSHOW)" << std::endl;
-		return 1;
-	}
+    if (argc <= 1) {
+        std::cout << argv[0] << " [FILE] (NOSHOW)" << std::endl;
+        return 1;
+    }
 
-	std::string infile = argv[1];
+    std::string infile = argv[1];
 
-	const cv::Mat img = lei_img(infile);
+    const cv::Mat img = lei_img(infile);
 
-	std::string outfile = std::string(infile) + ".jpg";
+    std::string outfile = std::string(infile) + ".jpg";
 
-	cv::imwrite(outfile, img);
-	std::cout << "Image Written to " << outfile << std::endl;
+    cv::imwrite(outfile, img);
+    std::cout << "Image Written to " << outfile << std::endl;
 
-	if (argc <= 2) {
-		cv::imshow(infile, img);
-		cv::waitKey(0);
-	}
+    if (argc <= 2) {
+        cv::imshow(infile, img);
+        cv::waitKey(0);
+    }
 
-	return 0;
+    return 0;
 }
